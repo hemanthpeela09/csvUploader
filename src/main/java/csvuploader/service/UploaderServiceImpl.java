@@ -85,9 +85,9 @@ public class UploaderServiceImpl implements UploaderService {
 
 		try {
 			for (CSVRecord csvRecord : csvRecords) {
-				String code = csvRecord.get("code");
 				String source = csvRecord.get("source");
 				String codeListCode = csvRecord.get("codeListCode");
+				String code = csvRecord.get("code");
 				String displayValue = csvRecord.get("displayValue");
 				String longDescription = csvRecord.get("longDescription");
 				String fromDate = csvRecord.get("fromDate");
@@ -96,10 +96,6 @@ public class UploaderServiceImpl implements UploaderService {
 				Date fromDateParsed = null;
 				Date toDateParsed = null;
 				Integer sortingPriorityParsed = null;
-
-				if (longDescription.isEmpty()) {
-					throw new RuntimeException("A long description needs to be provided.");
-				}
 
 				if (!fromDate.isEmpty()) {
 					fromDateParsed = new SimpleDateFormat("dd-MM-yyyy").parse(fromDate);

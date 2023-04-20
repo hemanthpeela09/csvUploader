@@ -30,6 +30,10 @@ public class DataModel {
 		this.toDate = toDate;
 		this.sortingPriority = sortingPriority;
 	}
+	
+	public DataModel() {
+		
+	}
 
 	@Id
 	@NonNull
