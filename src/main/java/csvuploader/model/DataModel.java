@@ -60,4 +60,11 @@ public class DataModel {
 
 	@Column(name = "sortingPriority")
 	private Integer sortingPriority;
+
+	@Override
+	public String toString() {
+		return "DataModel [code=" + code + ", source=" + source + ", codeListCode=" + codeListCode + ", displayValue="
+				+ displayValue + ", longDescription=" + longDescription + ", fromDate=" + fromDate + ", toDate="
+				+ toDate + ", sortingPriority=" + sortingPriority + "]";
+	}
 }

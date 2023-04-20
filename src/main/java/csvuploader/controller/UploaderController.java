@@ -1,5 +1,6 @@
 package csvuploader.controller;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,7 +50,7 @@ public class UploaderController {
 			if (list.isEmpty()) {
 				return ResponseEntity.status(HttpStatus.OK).body("Empty Data in Database");
 			}
-			return ResponseEntity.status(HttpStatus.OK).body("Successful");
+			return ResponseEntity.status(HttpStatus.OK).body(list.toString());
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -67,6 +68,7 @@ public class UploaderController {
 	
 	@DeleteMapping
 	public ResponseEntity<String> deleteAllData() {
+		service.deleteAllData();
 		return ResponseEntity.status(HttpStatus.OK).body("All data deleted");
 	}
 }
